@@ -1,0 +1,14 @@
+a{
+  color:#D80001;
+}
+a:hover{
+  color:#9a9a9a;
+}
+
+.active{
+  border-left:5px solid #D80001;
+}
+
+#logo{
+  width:100%;
+}
