@@ -141,7 +141,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <div class="col">
               <div class="form-group <?php echo (!empty($action_url_err)) ? 'has-error' : ''; ?>">
-                  <label>Call to Action URL</label>
+                  <label>Action Email Address</label>
                   <input type="text" name="action_url" class="form-control" value="<?php echo $action_url; ?>">
                   <span class="help-block"><?php echo $action_url_err; ?></span>
               </div>

@@ -20,7 +20,7 @@ function generatePortfolio(){
     echo '<h5 class="card-title">'. $row['title'] .'</h5>';
     echo '<p class="card-text" style="min-height:75px;max-height:75px;overflow:hidden;">'. $row['description'] .'</p>';
     echo '<div class="text-center">';
-    echo '<a href="'. $row['demo_url'] .'" class="btn btn-danger">Demo</a> <a href="'. $row['action_url'] .'" class="btn btn-primary">'. $row['action_text'] .'</a>';
+    echo '<a href="'. $row['demo_url'] .'" class="btn btn-danger">Demo</a> <a href="mailto:'. $row['action_url'] .'" class="btn btn-primary">'. $row['action_text'] .'</a>';
     echo '</div>';
     echo '</div>';
     echo '</div>';

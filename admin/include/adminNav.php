@@ -6,6 +6,9 @@
   <li class="nav-item">
     <a class="nav-link <?php if($_SESSION["page"] == "add"){ ?> active <?php } ?>" href="add.php">Add Portfolio</a>
   </li>
+  <li class="nav-item">
+    <a class="nav-link <?php if($_SESSION["page"] == "settings"){ ?> active <?php } ?>" href="settings.php">Settings</a>
+  </li>
   <?php } ?>
   <li class="nav-item">
     <a class="nav-link disabled" href="logout.php">Logout</a>

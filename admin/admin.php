@@ -2,7 +2,7 @@
 // Initialize the session
 session_start();
 
-$companyname = $phone = $template = $logo_available = $photos_available = $sent = "";
+$companyname = $phone = $template = $logo_available = $photos_available = $comments = $sent = "";
 $companyname_err = $phone_err = $template_err = "";
 
 require_once "include/adminFunctions.php";
@@ -18,6 +18,8 @@ validateLevel();
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     // Check if company name is empty
+    $comments = trim($_POST["comments"]);
+        
     if(empty(trim($_POST["companyname"]))){
         $companyname_err = "Please enter your company name.";
     } else{
@@ -33,7 +35,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     } else{
         $template = trim($_POST["template"]);
     }
-
     if(empty($companyname_err) && empty($phone_err) && empty($template_err)){
 
       $sql = "SELECT email FROM settings LIMIT 1";
@@ -58,7 +59,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       <p>Email: {$_SESSION['username']} </p>
       <p>Preferred Template: {$template} </p>
       <p>Has Logo: {$_POST['logo']} </p>
-      <p>Has Photos: {$_POST['photos']}
+      <p>Has Photos: {$_POST['photos']}</p>
+
+      <p>{$comments}</p>
       </body>
       </html>
       ";
@@ -134,6 +137,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
               </div>
             </div>
           </div>
+          <div class="form-group">
+            <label for="comment">Comments</label>
+            <textarea class="form-control" rows="5" id="comments" name="comments"></textarea>
+          </div>
+
           <div class="form-group">
               <input type="submit" class="btn btn-primary" value="Submit">
           </div>
